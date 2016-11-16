@@ -40,7 +40,7 @@ if ip != oldIP:
                 retCode = requests.get(url)
 		urllib2.urlopen(remoteMail+"?to="+toAddress)
 	else:
-		print "Erronous work mode."
+		print "Erroneous work mode."
 
 
 # Old school debug
