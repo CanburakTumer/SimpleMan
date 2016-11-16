@@ -23,9 +23,11 @@ mode = cfg.get("LOCAL", "mode")
 ip = urllib2.urlopen(remoteHost).read().strip("\n")
 f = open("ip","r+")
 oldIP = f.read()
+f.close()
 
 # Compare IP s and process
 if ip != oldIP:
+	f = open("ip","w+")
 	f.write(ip)
 	f.close()
 	url = "http://"+dyndnsUsername+":"+dyndnsPassword+"@members.dyndns.org/nic/update?hostname="+dyndnsHostname+"&myip="+ip+"&wildcard=NOCHG&mx=NOCHG&backmx=NOCHG"
