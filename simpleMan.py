@@ -31,7 +31,7 @@ if ip != oldIP:
 	url = "http://"+dyndnsUsername+":"+dyndnsPassword+"@members.dyndns.org/nic/update?hostname="+dyndnsHostname+"&myip="+ip+"&wildcard=NOCHG&mx=NOCHG&backmx=NOCHG"
 	if(mode == "MAIL"):
 		urllib2.urlopen(remoteMail+"?to="+toAddress)
-	elif(mode == "DYNDNS")
+	elif(mode == "DYNDNS"):
 		urllib2.urlopen(url)
 	elif(mode == "BOTH"):
                 urllib2.urlopen(url)
