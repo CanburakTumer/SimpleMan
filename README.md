@@ -22,7 +22,7 @@ SimpleMan is a tiny tool to help users connect their networks over dynamic IPs. 
 
 You can add the line below to your crontab file.
 
-> 00 * * * * [USER] [SIMPLE_MAN_PATH]/SimpleMan/simpleMan.py
+> 15 * * * * [SIMPLE_MAN_PATH]/SimpleMan/simpleMan.py
 
 #### Roadmap
 
