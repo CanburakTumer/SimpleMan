@@ -2,10 +2,11 @@
 import ConfigParser
 import urllib2
 import requests
+import os
 
 # Config File Read
 cfg = ConfigParser.ConfigParser()
-cfg.read("./config.conf")
+cfg.read(os.path.join(os.path.dirname(__file__),"config.conf"))
 
 # Host settings
 remoteHost = cfg.get("REMOTE","ping")
@@ -21,14 +22,15 @@ dyndnsHostname = cfg.get("DYNDNS", "hostname")
 mode = cfg.get("LOCAL", "mode")
 
 # Get new IP from remote and old IP from local
+ipfile = os.path.join(os.path.dirname(__file__),"ip")
 ip = urllib2.urlopen(remoteHost).read().strip("\n")
-f = open("ip","r+")
+f = open(ipfile,"r+")
 oldIP = f.read()
 f.close()
 
 # Compare IP s and process
 if ip != oldIP:
-	f = open("ip","w+")
+	f = open(ipfile,"w+")
 	f.write(ip)
 	f.close()
 	url = "http://"+dyndnsUsername+":"+dyndnsPassword+"@members.dyndns.org/nic/update?hostname="+dyndnsHostname+"&myip="+ip+"&wildcard=NOCHG&mx=NOCHG&backmx=NOCHG"
