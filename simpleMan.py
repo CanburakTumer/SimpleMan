@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import ConfigParser
 import urllib2
+import requests
 
 # Config File Read
 cfg = ConfigParser.ConfigParser()
@@ -34,9 +35,9 @@ if ip != oldIP:
 	if(mode == "MAIL"):
 		urllib2.urlopen(remoteMail+"?to="+toAddress)
 	elif(mode == "DYNDNS"):
-		urllib2.urlopen(url)
+		retCode = requests.get(url)
 	elif(mode == "BOTH"):
-                urllib2.urlopen(url)
+                retCode = requests.get(url)
 		urllib2.urlopen(remoteMail+"?to="+toAddress)
 	else:
 		print "Erronous work mode."
@@ -47,4 +48,4 @@ print oldIP
 print "Working mode " + mode
 print remoteHost
 print remoteMail
-print url
+print url+retCode.text
