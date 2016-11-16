@@ -42,10 +42,12 @@ if ip != oldIP:
 	else:
 		print "Erronous work mode."
 
+
 # Old school debug
 #ip = "127.0.0.1"
-print oldIP
-print "Working mode " + mode
-print remoteHost
-print remoteMail
-print url+retCode.text
+#print oldIP
+#print "Working mode " + mode
+#print remoteHost
+#print remoteMail
+#print url+retCode.text
+
