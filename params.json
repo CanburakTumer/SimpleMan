@@ -1,0 +1,6 @@
+{
+  "name": "Simpleman",
+  "tagline": "I am a SimpleMan, I see a different IP I e-mail it.",
+  "body": "# SimpleMan\r\n\r\n\"I am a simple man. I see different IP, I update things!\" [**](http://knowyourmeme.com/memes/i-m-a-simple-man) \r\n\r\nSimpleMan is a tiny tool to help users connect their networks over dynamic IPs. Computer using SimpleMan will let you know about new IP, when IP is changed.\r\n\r\n#### Properties\r\n\r\n  - Mail sending\r\n  - Updating DYNDNS hostname\r\n\r\n#### Installation\r\n\r\n  - Download all files\r\n  - Put _php_ files to a server\r\n  - Put _simpleMan.py_ to node in network with dynamic IP\r\n  - Edit _.conf_ file with required information\r\n  - Rename it to _config.conf_\r\n  - Run _simpleMan.py_\r\n\r\n#### Scheduling\r\n\r\nYou can add the line below to your crontab file.\r\n\r\n> 15 * * * * [SIMPLE_MAN_PATH]/SimpleMan/simpleMan.py\r\n\r\n#### Roadmap\r\n\r\n_No other feature is planned yet. To suggest new features, or report bugs please use [Github Issues](https://github.com/GarageGroup/SimpleMan/issues)_\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
